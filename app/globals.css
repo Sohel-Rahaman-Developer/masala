@@ -1,33 +1,38 @@
 @tailwind base;
 @tailwind components;
+
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.group img {
+  transition: opacity 0.3s ease-in-out;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.group:hover .group-hover\\:opacity-0 {
+  opacity: 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.group:hover .group-hover\\:opacity-100 {
+  opacity: 1;
+}
+.img-shadow {
+  -webkit-filter: drop-shadow(0px 0px 1px #e1dddd );
+  filter: drop-shadow(0px 0px 1px #f2f2f2);
+ cursor: pointer;
+  transition:1.5s;
+
+  
+}
+.img-shadow:hover {
+  transform:scale(1.05);
+  -webkit-filter: drop-shadow(0px 0px 1px #f8f8f8);
+  filter: drop-shadow(0px 0px 1px #eeeded);
+}
+::-webkit-scrollbar {
+  width: 6px; /* Adjust scrollbar width */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: #ca2020;
+  border-radius: 3px;
 }

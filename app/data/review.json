@@ -1,0 +1,153 @@
+[
+  {
+    "productId": 1,
+    "reviews": [
+      {
+        "id": 1,
+        "author": "John Doe",
+        "message": "This product exceeded my expectations! It's high quality and exactly what I needed.",
+        "photos": [
+          "/images/masala1.png",
+          "/images/masala1.png"
+        ],
+        "rating": 5,
+        "date": "2024-06-15"
+      },
+      {
+        "id": 2,
+        "author": "Jane Smith",
+        "message": "I'm not satisfied with this product. It arrived damaged and doesn't work as described.",
+        "photos": [
+          "/images/masala1.png"
+        ],
+        "rating": 2,
+        "date": "2024-06-16"
+      }
+    ]
+  },
+  {
+    "productId": 2,
+    "reviews": [
+      {
+        "id": 3,
+        "author": "Alice Johnson",
+        "message": "Amazing product! Highly recommended.",
+        "photos": [
+          "/images/masala1.png",
+          "/images/masala1.png"
+        ],
+        "rating": 4,
+        "date": "2024-06-17"
+      }
+    ]
+  },
+  {
+    "productId": 3,
+    "reviews": [
+      {
+        "id": 4,
+        "author": "David Brown",
+        "message": "Excellent quality masala! Loved the rich aroma and flavor it adds to my dishes.",
+        "photos": [
+          "/images/masala1.png"
+        ],
+        "rating": 5,
+        "date": "2024-06-18"
+      },
+      {
+        "id": 5,
+        "author": "Emily Wilson",
+        "message": "Not impressed with this masala. It lacks the authentic taste I was expecting.",
+        "photos": [],
+        "rating": 2,
+        "date": "2024-06-20"
+      }
+    ]
+  },
+  {
+    "productId": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "author": "Michael Taylor",
+        "message": "Great blend of spices for biryani! Definitely buying again.",
+        "photos": [],
+        "rating": 5,
+        "date": "2024-06-21"
+      }
+    ]
+  },
+  {
+    "productId": 5,
+    "reviews": []
+  },
+  {
+    "productId": 6,
+    "reviews": [
+      {
+        "id": 7,
+        "author": "Sophia Martinez",
+        "message": "The Rasam Powder has become a staple in my kitchen! Love the authentic taste it brings to my meals.",
+        "photos": [],
+        "rating": 4,
+        "date": "2024-06-22"
+      }
+    ]
+  },
+  {
+    "productId": 7,
+    "reviews": []
+  },
+  {
+    "productId": 8,
+    "reviews": [
+      {
+        "id": 8,
+        "author": "William Clark",
+        "message": "Delicious blend for Punjabi Chole! Adds the perfect amount of spice and flavor.",
+        "photos": [],
+        "rating": 5,
+        "date": "2024-06-23"
+      }
+    ]
+  },
+  {
+    "productId": 9,
+    "reviews": [
+      {
+        "id": 9,
+        "author": "Olivia White",
+        "message": "Rajma Masala has become a family favorite! The flavors are just right.",
+        "photos": [],
+        "rating": 5,
+        "date": "2024-06-25"
+      }
+    ]
+  },
+  {
+    "productId": 10,
+    "reviews": [
+      {
+        "id": 10,
+        "author": "Daniel Garcia",
+        "message": "Lovely aroma and flavor in the Pulao Masala! Makes my rice dishes extra special.",
+        "photos": [],
+        "rating": 4,
+        "date": "2024-06-26"
+      }
+    ]
+  },
+  {
+    "productId": 11,
+    "reviews": [
+      {
+        "id": 11,
+        "author": "Isabella Rodriguez",
+        "message": "Paneer Tikka Masala is a hit in my household! Creamy and full of flavor.",
+        "photos": [],
+        "rating": 5,
+        "date": "2024-06-27"
+      }
+    ]
+  }
+]
