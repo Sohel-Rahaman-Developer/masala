@@ -7,7 +7,6 @@
 .group img {
   transition: opacity 0.3s ease-in-out;
 }
-
 .group:hover .group-hover\\:opacity-0 {
   opacity: 0;
 }
@@ -35,4 +34,12 @@
 ::-webkit-scrollbar-thumb {
   background-color: #ca2020;
   border-radius: 3px;
+}
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 38px!important;
+  line-height: 1;
+  opacity: .75;
+  color: #dadada!important;
+  -webkit-font-smoothing: antialiased;
 }

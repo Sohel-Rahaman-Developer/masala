@@ -1,5 +1,6 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef} from "react";
+import useFadeInFromTop from "../hooks/useFadeInFromTop";
 
 const Breadcrumb = ({ pageTitle, items }) => {
   const [height, setHeight] = useState(200); // Initial height set to 200px
@@ -19,7 +20,7 @@ const Breadcrumb = ({ pageTitle, items }) => {
   }, []);
 
   const backgroundStyle = {
-    backgroundImage: "url(/images/masala1.png)",
+    backgroundImage: "url(/images/breadcrumb2.jpg)",
     backgroundSize: "contain",
     backgroundPosition: "top",
     backgroundColor: "rgba(0, 0, 0, 1)",
@@ -34,11 +35,12 @@ const Breadcrumb = ({ pageTitle, items }) => {
     padding: "20px",
     textAlign: "center",
   };
-
+    const textTop = useRef(null);
+  useFadeInFromTop(textTop);
   return (
     <div style={backgroundStyle} className="h-screen flex items-center justify-center">
       <div className="text-center flex flex-col justify-center items-center h-full w-full gap-3" style={backgroundStyle2}>
-        <h1 className="lg:text-6xl text-2xl">{pageTitle}</h1>
+        <h1 className="lg:text-6xl text-2xl" ref={textTop}>{pageTitle}</h1>
         <div className="flex items-center justify-center">
           <span className="text-gray-300">Home</span>
           {items.map((item, index) => (

@@ -47,14 +47,14 @@ function Header() {
             <div className="group relative cursor-pointer overflow-hidden">
               <span className="inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[-120%]">
                 <img
-                  src="/images/ts-gharana.jpg"
+                  src="/images/milmapure.png"
                   className="max-h-[40px] lg:max-h-[60px] p-1"
                   alt="Tailwindcss Navigation"
                 />
               </span>
-              <span className="absolute left-0 translate-y-[120%] rotate-12 inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[0] group-hover:rotate-0">
+              <span className="absolute left-0 translate-y-[130%] rotate-12 inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[0] group-hover:rotate-0">
                 <img
-                  src="/images/ts-gharana.jpg"
+                  src="/images/milmapure.png"
                   className="max-h-[40px] lg:max-h-[60px] p-1"
                   alt="Tailwindcss Navigation"
                 />

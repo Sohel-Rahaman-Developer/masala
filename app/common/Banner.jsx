@@ -39,7 +39,7 @@ const CustomNextArrow = ({ currentSlide, slideCount, ...props }) => (
   <div
     {...props}
     className="slick-next"
-    style={{ right: '10px', zIndex: 1 }}
+    style={{ right: '25px', zIndex: 1 }}
   >
     Next
   </div>
@@ -79,7 +79,7 @@ const Banner = () => {
                   alt={slide.title}
                   className="w-full h-auto object-cover"
                 />
-                {/* <div className="absolute bottom-0 bg-black bg-opacity-50 w-full p-4 text-center">
+                {/* <div className="absolute top-0 left-50 bg-opacity-50 w-full p-4 text-center">
                   <h2 className="text-2xl mb-2">{slide.title}</h2>
                   <p className="text-lg">{slide.description}</p>
                 </div> */}

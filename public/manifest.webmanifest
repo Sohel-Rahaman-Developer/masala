@@ -4,8 +4,8 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "masala",
-    "short_name": "masala",
+    "name": "Milmapure",
+    "short_name": "Milmapure",
     "icons": [
         {
             "src": "/icon-192x192.png",

@@ -1,7 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useRef } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+import useFadeInFromTop from '../hooks/useFadeInFromTop';
+import useFadeInFromBottom from '../hooks/useFadeInFromBottom';
+import useFadeInFromLeft from '../hooks/useFadeInFromLeft';
+import useFadeInFromRight from '../hooks/useFadeInFromRight';
+
 
 const galleryData = {
   images: [
@@ -60,6 +66,23 @@ const Gallery = () => {
       window.removeEventListener('beforeunload', handleReload);
     };
   }, []);
+  const imageRefTop = useRef(null);
+  const imageRefTopb = useRef(null);
+  const imageRefLeft = useRef(null);
+  const imageRefBottom = useRef(null);
+  const imageRefBottomb = useRef(null);
+
+  const imageRefRight = useRef(null);
+  const imageRefScale = useRef(null);
+  useFadeInFromTop(imageRefTop);
+  useFadeInFromTop(imageRefTopb);
+  useFadeInFromLeft(imageRefLeft);
+  useFadeInFromBottom(imageRefBottom);
+  useFadeInFromBottom(imageRefBottomb);
+  useFadeInFromRight(imageRefRight);
+
+
+
 
   return (
     <div>
@@ -77,6 +100,7 @@ const Gallery = () => {
                 alt="img_01"
                 onError={() => handleImageError(0)}
                 onClick={() => openLightbox(0)}
+                ref={imageRefLeft}
               />
             </div>
             <div className="hidden md:flex flex-1 flex-row gap-2">
@@ -88,6 +112,8 @@ const Gallery = () => {
                   alt="img_02"
                   onError={() => handleImageError(1)}
                   onClick={() => openLightbox(1)}
+                ref={imageRefBottom}
+
                 />
               </div>
               <div className="hidden md:flex flex-1 flex-col">
@@ -98,6 +124,8 @@ const Gallery = () => {
                   alt="img_03"
                   onError={() => handleImageError(2)}
                   onClick={() => openLightbox(2)}
+                ref={imageRefBottomb}
+
                 />
               </div>
             </div>
@@ -112,6 +140,8 @@ const Gallery = () => {
                   alt="img_04"
                   onError={() => handleImageError(3)}
                   onClick={() => openLightbox(3)}
+                ref={imageRefTop}
+
                 />
               </div>
               <div className="hidden md:flex flex-1 flex-col">
@@ -122,6 +152,8 @@ const Gallery = () => {
                   alt="img_05"
                   onError={() => handleImageError(4)}
                   onClick={() => openLightbox(4)}
+                ref={imageRefTopb}
+
                 />
               </div>
             </div>
@@ -133,6 +165,7 @@ const Gallery = () => {
                 alt="img_06"
                 onError={() => handleImageError(5)}
                 onClick={() => openLightbox(5)}
+                ref={imageRefRight}
               />
             </div>
           </div>

@@ -1,24 +1,46 @@
-import Link from 'next/link'
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faInstagram, faTwitter, faGithub, faDribbble } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+/* eslint-disable @next/next/no-img-element */
+"use client"
+import Link from 'next/link';
+import React, { useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faTwitter, faGithub, faDribbble } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import useFadeInFromTop from '../hooks/useFadeInFromTop';
+import useFadeInFromLeft from '../hooks/useFadeInFromLeft';
+import useFadeInFromBottom from '../hooks/useFadeInFromBottom';
 
 function Footer() {
+    const logoRef = useRef(null);
+    const logoRefb = useRef(null);
+    const descriptionRef = useRef(null);
+    const socialIconsRef = useRef(null);
+    const servicesRef = useRef(null);
+    const linksRef = useRef(null);
+    const contactRef = useRef(null);
+    useFadeInFromTop(logoRef);
+    useFadeInFromTop(logoRefb);
+    useFadeInFromLeft(descriptionRef);
+    useFadeInFromBottom(socialIconsRef);
+    useFadeInFromTop(servicesRef);
+    useFadeInFromLeft(linksRef);
+    useFadeInFromBottom(contactRef);
+
+
     return (
         <footer className="bg-gray-900">
             <div className="max-w-screen-2xl px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                    
                     <div>
-                        <div className="flex justify-center text-teal-300 sm:justify-start">
+                        <div ref={logoRef} className="flex justify-center text-teal-300 sm:justify-start">
                             <img
-                                src="/images/ts-gharana-withoutbg.png"
+                                src="/images/milmapure.png"
                                 className="max-h-[80px] lg:h-[80px] p-1 img-shadow"
                                 alt="Tailwindcss Navigation"
                             />
                         </div>
-                        <p className="max-w-md mx-auto mt-6 leading-relaxed text-center text-gray-400 sm:max-w-xs sm:mx-0 sm:text-left">
-                        TS GHARANA: Where Tradition Meets Flavor. Pure, Natural, and Chemical-Free Spice Blends for Culinary Excellence.
+                        <p ref={descriptionRef} className="max-w-md mx-auto mt-6 leading-relaxed text-center text-gray-400 sm:max-w-xs sm:mx-0 sm:text-left">
+                            Milmapure: Where Tradition Meets Flavor. Pure, Natural, and Chemical-Free Spice Blends for Culinary Excellence.
                         </p>
                         <ul className="flex justify-center gap-6 mt-8 md:gap-8 sm:justify-start">
                             <li>
@@ -45,7 +67,7 @@ function Footer() {
                                     </a>
                                 </Link>
                             </li>
-                            <li>
+                           <li>
                                 <Link href="/" legacyBehavior>
                                     <a className="text-[#ca2020] transition hover:text-[#ca2020]/75">
                                         <span className="sr-only">GitHub</span>
@@ -53,23 +75,31 @@ function Footer() {
                                     </a>
                                 </Link>
                             </li>
-                            <li>
+                           {/*   <li>
                                 <Link href="/" legacyBehavior>
                                     <a className="text-[#ca2020] transition hover:text-[#ca2020]/75">
                                         <span className="sr-only">Dribbble</span>
                                         <FontAwesomeIcon icon={faDribbble} className="w-6 h-6" />
                                     </a>
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
+                        <div>
+                    <div ref={logoRefb} className="flex justify-center text-teal-300 sm:justify-start">
+                            <img
+                                src="/images/tslogo.png"
+                                className="max-w-[180px]  p-1 img-shadow"
+                                alt="Tailwindcss Navigation"
+                            />
+                        </div>
+                    </div>
                     </div>
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 md:grid-cols-3">
-                 
-                        <div className="text-center sm:text-left">
+                        <div ref={servicesRef} className="text-center sm:text-left">
                             <p className="text-lg font-medium text-white">Our Services</p>
                             <nav className="mt-8">
                                 <ul className="space-y-4 text-sm">
-                                <li>
+                                    <li>
                                         <Link href="/products" legacyBehavior>
                                             <a className="text-white transition hover:text-white/75">
                                                All Products
@@ -97,11 +127,10 @@ function Footer() {
                                             </a>
                                         </Link>
                                     </li>
-                                
                                 </ul>
                             </nav>
                         </div>
-                        <div className="text-center sm:text-left">
+                        <div ref={linksRef} className="text-center sm:text-left">
                             <p className="text-lg font-medium text-white">Helpful Links</p>
                             <nav className="mt-8">
                                 <ul className="space-y-4 text-sm">
@@ -161,36 +190,22 @@ function Footer() {
                                             </a>
                                         </Link>
                                     </li>
-                                    {/* <li>
-                                        <Link href="/" legacyBehavior>
-                                            <a className="flex group justify-center sm:justify-start gap-1.5">
-                                                <span className="text-white transition group-hover:text-white/75">
-                                                    Live Chat
-                                                </span>
-                                                <span className="relative flex w-2 h-2 -mr-2">
-                                                    <span className="absolute inline-flex w-full h-full bg-[#ca2020] rounded-full opacity-75 animate-ping" />
-                                                    <span className="relative inline-flex w-2 h-2 bg-[#f34848] rounded-full" />
-                                                </span>
-                                            </a>
-                                        </Link>
-                                    </li> */}
                                 </ul>
                             </nav>
                         </div>
-                        <div className="text-center sm:text-left">
+                        <div ref={contactRef} className="text-center sm:text-left">
                             <p className="text-lg font-medium text-white">Contact Us</p>
                             <ul className="mt-8 space-y-4 text-sm">
-                            <li>
-                              <Link href="mailto:tsfoodproduct@gmail.com" legacyBehavior>
-                                <a className="flex items-center justify-center sm:justify-start gap-1.5 group">
-                                  <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 text-white shrink-0" />
-                                  <span className="text-white transition group-hover:text-white/75">
-                                    tsfoodproduct@gmail.com
-                                  </span>
-                                </a>
-                              </Link>
-                            </li>
-
+                                <li>
+                                    <Link href="mailto:tsfoodproduct@gmail.com" legacyBehavior>
+                                        <a className="flex items-center justify-center sm:justify-start gap-1.5 group">
+                                            <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 text-white shrink-0" />
+                                            <span className="text-white transition group-hover:text-white/75">
+                                                tsfoodproduct@gmail.com
+                                            </span>
+                                        </a>
+                                    </Link>
+                                </li>
                                 <li>
                                     <a
                                         className="flex items-center justify-center sm:justify-start gap-1.5 group"
@@ -214,7 +229,7 @@ function Footer() {
                 </div>
                 <div className="pt-6 mt-12 border-t border-gray-800">
                     <div className="text-center sm:flex sm:justify-between sm:text-left">
-                        <p className="text-sm text-gray-400">
+                        <p  className="text-sm text-gray-400">
                             <span className="block sm:inline">All rights reserved.</span>
                             <span className="block sm:inline"> &middot; </span>
                             <Link href="/" legacyBehavior>
@@ -229,7 +244,7 @@ function Footer() {
                                 </a>
                             </Link>
                         </p>
-                        <p className="mt-4 text-sm text-gray-400 sm:mt-0">&copy; 2024 tsfoodproduct. All Rights Reserved.</p>
+                        <p  className="mt-4 text-sm text-gray-400 sm:mt-0">&copy; 2024 tsfoodproduct. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
@@ -237,4 +252,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default Footer;

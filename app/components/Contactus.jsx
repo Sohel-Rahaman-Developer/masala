@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client"
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
@@ -11,6 +12,7 @@ function Contactus() {
     phone: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false); // State to track submission status
 
   const handleChange = (e) => {
     setFormData({
@@ -21,39 +23,48 @@ function Contactus() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true); // Set isSubmitting to true when form is submitted
+
     // Perform validation here using regular expressions
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const phonePattern = /^(?:\d{10}|\d{3}-\d{3}-\d{4})$/;
     if (!emailPattern.test(formData.email)) {
       toast.error("Please enter a valid email address.");
+      setIsSubmitting(false); // Reset isSubmitting to false
       return;
     }
     if (!phonePattern.test(formData.phone)) {
       toast.error("Please enter 10 digit valid phone number.");
+      setIsSubmitting(false); // Reset isSubmitting to false
       return;
     }
-    
+
     // If validation passes, send email using EmailJS
-    emailjs.sendForm(
-      "service_kxr7oam",
-      "template_8dv2c2x",
-      e.target,
-      "VRQ8zwHdIMHD2wYjz"
-    )
-    .then((result) => {
-      console.log("Email sent successfully!", result.text);
-      toast.success("Message sent successfully!");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: ""
-      });
-    },
-    (error) => {
-      console.error("Error sending email:", error.text);
-      toast.error("Failed to send message. Please try again later.");
-    });
+    emailjs
+      .sendForm(
+        "service_kxr7oam",
+        "template_8dv2c2x",
+        e.target,
+        "VRQ8zwHdIMHD2wYjz"
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully!", result.text);
+          toast.success("Message sent successfully!");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: ""
+          });
+          setIsSubmitting(false); // Reset isSubmitting to false
+        },
+        (error) => {
+          console.error("Error sending email:", error.text);
+          toast.error("Failed to send message. Please try again later.");
+          setIsSubmitting(false); // Reset isSubmitting to false
+        }
+      );
   };
 
   return (
@@ -66,8 +77,8 @@ function Contactus() {
               Contact Us
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-              gentrify.
+              Reach out to us for any questions or collaboration opportunities.
+              We're here to help!
             </p>
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
@@ -153,8 +164,15 @@ function Contactus() {
                   </div>
                 </div>
                 <div className="p-2 w-full">
-                  <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                    Submit
+                  <button
+                    type="submit"
+                    disabled={isSubmitting} // Disable the button if submitting
+                    className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                  >
+                    {isSubmitting ? 
+                      "Submitting..." :
+                    
+                     "Submit"}
                   </button>
                 </div>
               </div>
