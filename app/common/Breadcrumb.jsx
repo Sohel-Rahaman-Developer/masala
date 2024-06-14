@@ -20,7 +20,7 @@ const Breadcrumb = ({ pageTitle, items }) => {
   }, []);
 
   const backgroundStyle = {
-    backgroundImage: "url(/images/breadcrumb2.jpg)",
+    backgroundImage: "url(/images/breadcrumb3.png)",
     backgroundSize: "contain",
     backgroundPosition: "top",
     backgroundColor: "rgba(0, 0, 0, 1)",
