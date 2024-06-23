@@ -90,18 +90,18 @@ const Category = () => {
   };
 
   return (
-    <div className="category-area px-4 py-8">
-      <h2 ref={headingRef} className="text-3xl font-bold text-center mb-2">Products Category</h2>
+    <div className="px-4 py-8 category-area">
+      <h2 ref={headingRef} className="mb-2 text-3xl font-bold text-center">Products Category</h2>
       <div className='underline-container'>
-        <div className='underline mx-auto mb-6'></div>
+        <div className='mx-auto mb-6 underline'></div>
       </div>
       <div className="flex flex-wrap justify-center">
         {categories.map((category) => (
-          <div key={category.name} className="w-full sm:w-1/2 lg:w-1/4 p-4" ref={addToProductsRefs}>
+          <div key={category.name} className="w-1/2 p-4 sm:w-1/2 lg:w-1/4" ref={addToProductsRefs}>
             <Link href={category.link}>
-              <div className="relative rounded-lg overflow-hidden group cursor-pointer" >
-                <div ref={addToRefs} className='rounded-full w-48 mx-auto h-48 overflow-hidden ease-in-out '>
-                  <div className="image-container transition w-48 h-48 shadow-2xl rounded-full transform transition-transform duration-500 ease-in-out group-hover:scale-125">
+              <div className="relative overflow-hidden rounded-lg cursor-pointer group" >
+                <div ref={addToRefs} className='mx-auto overflow-hidden ease-in-out rounded-full w-[80px] h-[80px] md:w-48 md:h-48 '>
+                  <div className="transition transition-transform duration-500 ease-in-out transform rounded-full shadow-2xl w-[80px] h-[80px] md:w-48 md:h-48 image-container group-hover:scale-125">
                     <Image 
                       src={category.imageUrl} 
                       alt={category.name} 
@@ -110,7 +110,7 @@ const Category = () => {
                     />
                   </div>
                 </div>
-                <strong className="block text-center py-2">{category.name}</strong>
+                <strong className="block py-2 text-center">{category.name}</strong>
               </div>
             </Link>
           </div>
