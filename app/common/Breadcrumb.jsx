@@ -20,7 +20,7 @@ const Breadcrumb = ({ pageTitle, items }) => {
   }, []);
 
   const backgroundStyle = {
-    backgroundImage: "url(/images/breadcrumb3.png)",
+    backgroundImage: "url(/images/breadcrumb2.jpg)",
     backgroundSize: "contain",
     backgroundPosition: "top",
     backgroundColor: "rgba(0, 0, 0, 1)",
@@ -38,13 +38,13 @@ const Breadcrumb = ({ pageTitle, items }) => {
     const textTop = useRef(null);
   useFadeInFromTop(textTop);
   return (
-    <div style={backgroundStyle} className="h-screen flex items-center justify-center">
-      <div className="text-center flex flex-col justify-center items-center h-full w-full gap-3" style={backgroundStyle2}>
-        <h1 className="lg:text-6xl text-2xl" ref={textTop}>{pageTitle}</h1>
+    <div style={backgroundStyle} className="flex items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center w-full h-full gap-3 text-center" style={backgroundStyle2}>
+        <h1 className="text-2xl lg:text-6xl" ref={textTop}>{pageTitle}</h1>
         <div className="flex items-center justify-center">
           <span className="text-gray-300">Home</span>
           {items.map((item, index) => (
-            <span key={index} className="text-gray-300 mx-2">
+            <span key={index} className="mx-2 text-gray-300">
               {" "}
               &gt; {item}
             </span>
