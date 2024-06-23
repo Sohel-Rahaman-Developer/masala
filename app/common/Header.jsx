@@ -47,18 +47,24 @@ function Header() {
           <div className="container flex items-center justify-between mx-auto">
             <div className="relative overflow-hidden cursor-pointer group">
               <span className="inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[-120%]">
+              <Link href="/">
                 <img
                   src="/images/milmapure.png"
                   className="max-h-[40px] lg:max-h-[60px] p-1"
                   alt="Tailwindcss Navigation"
                 />
+                </Link>
               </span>
               <span className="absolute left-0 translate-y-[130%] rotate-12 inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[0] group-hover:rotate-0">
+              <Link href="/">
+
                 <img
                   src="/images/milmapure.png"
                   className="max-h-[40px] lg:max-h-[60px] p-1"
                   alt="Tailwindcss Navigation"
                 />
+                </Link>
+
               </span>
             </div>
 
