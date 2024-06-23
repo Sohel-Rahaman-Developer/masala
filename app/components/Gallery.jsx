@@ -87,12 +87,12 @@ const Gallery = () => {
   return (
     <div>
       {/* Image Section */}
-      <div className="max-w-screen-2xl mx-auto px-4 py-8 lg:py-16 relative bg-gray-50">
-        <h2 className="text-2xl font-semibold mb-4">Photos</h2>
-        <div className="w-16 h-1 bg-red-500 mb-8"></div>
-        <div className="flex flex-col md:flex-row gap-2">
-          <div className="flex flex-1 flex-col gap-2">
-            <div className="flex flex-1 flex-col">
+      <div className="relative px-4 py-8 mx-auto max-w-screen-2xl lg:py-16 bg-gray-50">
+        <h2 className="mb-4 text-2xl font-semibold">Photos</h2>
+        <div className="w-16 h-1 mb-8 bg-red-500"></div>
+        <div className="flex flex-col gap-2 overflow-hidden md:flex-row">
+          <div className="flex flex-col flex-1 gap-2">
+            <div className="flex flex-col flex-1">
               {imageError[0] && <div>Error loading image</div>}
               <img
                 className={`object-cover h-full cursor-pointer ${imageError[0] ? 'hidden' : ''}`}
@@ -103,8 +103,8 @@ const Gallery = () => {
                 ref={imageRefLeft}
               />
             </div>
-            <div className="hidden md:flex flex-1 flex-row gap-2">
-              <div className="flex flex-1 flex-col">
+            <div className="flex-row flex-1 hidden gap-2 md:flex">
+              <div className="flex flex-col flex-1">
                 {imageError[1] && <div>Error loading image</div>}
                 <img
                   className={`object-cover h-full cursor-pointer ${imageError[1] ? 'hidden' : ''}`}
@@ -116,7 +116,7 @@ const Gallery = () => {
 
                 />
               </div>
-              <div className="hidden md:flex flex-1 flex-col">
+              <div className="flex-col flex-1 hidden md:flex">
                 {imageError[2] && <div>Error loading image</div>}
                 <img
                   className={`object-cover h-full cursor-pointer ${imageError[2] ? 'hidden' : ''}`}
@@ -130,9 +130,9 @@ const Gallery = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-1 flex-col gap-2">
-            <div className="hidden md:flex flex-1 flex-row gap-2">
-              <div className="flex flex-1 flex-col">
+          <div className="flex flex-col flex-1 gap-2">
+            <div className="flex-row flex-1 hidden gap-2 md:flex">
+              <div className="flex flex-col flex-1">
                 {imageError[3] && <div>Error loading image</div>}
                 <img
                   className={`object-cover h-full cursor-pointer ${imageError[3] ? 'hidden' : ''}`}
@@ -144,7 +144,7 @@ const Gallery = () => {
 
                 />
               </div>
-              <div className="hidden md:flex flex-1 flex-col">
+              <div className="flex-col flex-1 hidden md:flex">
                 {imageError[4] && <div>Error loading image</div>}
                 <img
                   className={`object-cover h-full cursor-pointer ${imageError[4] ? 'hidden' : ''}`}
@@ -157,7 +157,7 @@ const Gallery = () => {
                 />
               </div>
             </div>
-            <div className="flex flex-1 flex-col">
+            <div className="flex flex-col flex-1">
               {imageError[5] && <div>Error loading image</div>}
               <img
                 className={`object-cover h-full cursor-pointer ${imageError[5] ? 'hidden' : ''}`}
@@ -173,10 +173,10 @@ const Gallery = () => {
       </div>
 
       {/* Video Embedding Section */}
-      <div className="max-w-screen-2xl mx-auto px-4 py-8 lg:py-16 relative bg-gray-50">
-        <h2 className="text-2xl font-semibold mb-4">Videos</h2>
-        <div className="w-16 h-1 bg-red-500 mb-8"></div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+      <div className="relative px-4 py-8 mx-auto max-w-screen-2xl lg:py-16 bg-gray-50">
+        <h2 className="mb-4 text-2xl font-semibold">Videos</h2>
+        <div className="w-16 h-1 mb-8 bg-red-500"></div>
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
           {galleryData.videos.map((video, index) => (
             <div key={index} className="relative pb-[56.25%] h-0">
               {videoError[index] && <div>Error loading video</div>}

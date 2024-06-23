@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SocialLink from "./SocialLink";
+import CartIcon from "./CartIcon";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,8 +44,8 @@ function Header() {
     <header className="sticky top-0 z-20 bg-[#fff] shadow-lg">
       <div className="max-w-[1800px] mx-auto">
         <nav className="relative px-2 py-1">
-          <div className="container mx-auto flex justify-between items-center">
-            <div className="group relative cursor-pointer overflow-hidden">
+          <div className="container flex items-center justify-between mx-auto">
+            <div className="relative overflow-hidden cursor-pointer group">
               <span className="inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[-120%]">
                 <img
                   src="/images/milmapure.png"
@@ -61,7 +62,7 @@ function Header() {
               </span>
             </div>
 
-            <ul className="hidden md:flex space-x-6">
+            <ul className="hidden space-x-6 md:flex">
               <li>
                 <Link href="/">
                   <div
@@ -69,7 +70,7 @@ function Header() {
                       pathname === "/" ? "border-b-2 border-red-500" : ""
                     }`}
                   >
-                    <div className="group relative cursor-pointer overflow-hidden">
+                    <div className="relative overflow-hidden cursor-pointer group">
                       <span className="inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[-120%]">
                         Home
                       </span>
@@ -80,7 +81,7 @@ function Header() {
                   </div>
                 </Link>
               </li>
-              <li className="flex relative group">
+              <li className="relative flex group">
                 <Link
                   href="/products"
                   className={`${
@@ -89,36 +90,36 @@ function Header() {
                       : ""
                   }`}
                 >
-                  <div className="group relative cursor-pointer overflow-hidden">
+                  <div className="relative overflow-hidden cursor-pointer group">
                     <span className="inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[-120%]">
                       <span>
                         Products
-                        <i className="fa-solid fa-chevron-down fa-2xs pt-3 ms-1" />
+                        <i className="pt-3 fa-solid fa-chevron-down fa-2xs ms-1" />
                       </span>
                     </span>
                     <span className="absolute left-0 translate-y-[120%] rotate-12 inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[0] group-hover:rotate-0">
                       <span>
                         Products
-                        <i className="fa-solid fa-chevron-down fa-2xs pt-3 ms-1" />
+                        <i className="pt-3 fa-solid fa-chevron-down fa-2xs ms-1" />
                       </span>
                     </span>
                   </div>
                 </Link>
                 {/* Submenu starts */}
-                <ul className="absolute bg-white p-3 w-52 top-6 transform scale-0 group-hover:scale-100 transition duration-150 ease-in-out origin-top shadow-lg">
+                <ul className="absolute p-3 transition duration-150 ease-in-out origin-top transform scale-0 bg-white shadow-lg w-52 top-6 group-hover:scale-100">
                   <li className="text-sm hover:bg-slate-200">
                     <Link href="/products/basic-ground-spices">
-                      <div className="py-2 px-2">Basic Ground Spices</div>
+                      <div className="px-2 py-2">Basic Ground Spices</div>
                     </Link>
                   </li>
                   <li className="text-sm hover:bg-slate-200">
                     <Link href="/products/blended-spices">
-                      <div className="py-2 px-2">Blended Spices</div>
+                      <div className="px-2 py-2">Blended Spices</div>
                     </Link>
                   </li>
                   <li className="text-sm hover:bg-slate-200">
                     <Link href="/products/combopack">
-                      <div className="py-2 px-2">Combo Pack</div>
+                      <div className="px-2 py-2">Combo Pack</div>
                     </Link>
                   </li>
                 </ul>
@@ -132,7 +133,7 @@ function Header() {
                       pathname === "/gallery" ? "border-b-2 border-red-500" : ""
                     }`}
                   >
-                    <div className="group relative cursor-pointer overflow-hidden">
+                    <div className="relative overflow-hidden cursor-pointer group">
                       <span className="inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[-120%]">
                         <span>Gallery</span>
                       </span>
@@ -150,7 +151,7 @@ function Header() {
                       pathname === "/about" ? "border-b-2 border-red-500" : ""
                     }`}
                   >
-                    <div className="group relative cursor-pointer overflow-hidden">
+                    <div className="relative overflow-hidden cursor-pointer group">
                       <span className="inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[-120%]">
                         <span>About Us</span>
                       </span>
@@ -170,7 +171,7 @@ function Header() {
                         : ""
                     }`}
                   >
-                    <div className="group relative cursor-pointer overflow-hidden">
+                    <div className="relative overflow-hidden cursor-pointer group">
                       <span className="inline-block p-1 transition duration-500 ease-out group-hover:translate-y-[-120%]">
                         <span>Contact Us</span>
                       </span>
@@ -182,12 +183,15 @@ function Header() {
                 </Link>
               </li>
             </ul>
-            <div>
-              <SocialLink />
+            <div className="flex justify-end px-2 grow md:grow-0">
+              {/* <SocialLink /> */}
+              <div className="mt-2 me-4 md:m-0">
+              <CartIcon quantity={1} />
+              </div>
             </div>
 
             {/* Mobile menu icon */}
-            <button onClick={handleMenuToggle} className="md:hidden">
+            <button onClick={handleMenuToggle} className="md:hidden w-[20px]">
               <i
                 className={`fa-solid ${isMenuOpen ? "fa-times" : "fa-bars"}`}
               />
@@ -206,14 +210,14 @@ function Header() {
               } z-30`}
               onClick={(e) => e.stopPropagation()} // Prevent click on menu from closing it
             >
-              <div className="flex justify-between items-center p-4">
-                <span className="font-bold text-lg">Menu</span>
+              <div className="flex items-center justify-between p-4">
+                <span className="text-lg font-bold">Menu</span>
                 <button onClick={handleCloseMenu}>
                   <i className="fa-solid fa-times" />
                 </button>
               </div>
-              <ul className="p-4">
-                <li className="border-b-2 border-white hover:bg-red-400 hover:text-white pl-4">
+              <ul className="pt-4 m-0">
+                <li className="pl-4 border-b-2 border-white hover:bg-red-400 hover:text-white">
                   <Link
                     href="/"
                     className={`block pl-7 ${
@@ -223,7 +227,7 @@ function Header() {
                     Home
                   </Link>
                 </li>
-                <li className="border-b-2 border-white hover:bg-red-400 hover:text-white pl-4">
+                <li className="pl-4 border-b-2 border-white hover:bg-red-400 hover:text-white">
                   <Link
                     href="/gallery"
                     className={`block pl-7 ${
@@ -235,11 +239,11 @@ function Header() {
                 </li>
                 <li className="border-b-2 border-white hover:bg-red-400 hover:text-white">
                   <div
-                    className="block pl-11 flex justify-between items-center"
+                    className="flex items-center justify-between block pl-11"
                     onClick={handleSubMenuToggle}
                   >
                     Products{" "}
-                    <i className="fa-solid fa-chevron-down fa-2xs pt-4" />
+                    <i className="pt-0 pe-3 fa-solid fa-chevron-down fa-2xs" />
                   </div>
                   {/* Submenu starts */}
                   <ul
@@ -247,7 +251,7 @@ function Header() {
                       isSubMenuOpen ? "block" : "hidden"
                     }`}
                   >
-                    <li className="text-sm leading-8 font-normal hover:bg-slate-200">
+                    <li className="text-sm font-normal leading-8 hover:bg-slate-200">
                       <Link
                         href="/products/basic-ground-spices"
                         className="block pl-16"
@@ -255,7 +259,7 @@ function Header() {
                         Basic Ground Spices
                       </Link>
                     </li>
-                    <li className="text-sm leading-8 font-normal hover:bg-slate-200">
+                    <li className="text-sm font-normal leading-8 hover:bg-slate-200">
                       <Link
                         href="/products/blended-spices"
                         className="block pl-16"
@@ -263,7 +267,7 @@ function Header() {
                         Blended Spices
                       </Link>
                     </li>
-                    <li className="text-sm leading-8 font-normal hover:bg-slate-200">
+                    <li className="text-sm font-normal leading-8 hover:bg-slate-200">
                       <Link
                         href="/products/whole-spices"
                         className="block pl-16"
@@ -274,7 +278,7 @@ function Header() {
                   </ul>
                   {/* Submenu ends */}
                 </li>
-                <li className="border-b-2 border-white hover:bg-red-400 hover:text-white pl-4">
+                <li className="pl-4 border-b-2 border-white hover:bg-red-400 hover:text-white">
                   <Link
                     href="/about"
                     className={`block pl-7 ${
@@ -284,7 +288,7 @@ function Header() {
                     About Us
                   </Link>
                 </li>
-                <li className="border-b-2 border-white hover:bg-red-400 hover:text-white pl-4">
+                <li className="pl-4 border-b-2 border-white hover:bg-red-400 hover:text-white">
                   <Link
                     href="/contact-us"
                     className={`block pl-7 ${

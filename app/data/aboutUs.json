@@ -1,35 +1,34 @@
 {
-    "sections": [
-      {
-        "title": "Our Story",
-        "content": [
-          "Small, honest beginnings. Steady, sustained growth. A circle of ever-expanding, committed stakeholders and ever-growing loyal customer base, making us today one of the most trusted brands across demographics in the country.",
-          "From a modest home-grown venture to a brand with cutting-edge production units, state-of- the-art machinery and path-breaking research and development tools, the SUNRISE journey is the stuff of not only stories, but of legend."
-        ],
-        "image": "/about-images/about.png"
-      },
-      {
-        "title": "Our Research and Development",
-        "content": [
-          "Our philosophy is not to rest on our laurels but to keep bringing to the consumer and the market newer and newer innovations and better and better quality. Our Research and Development team is constantly engaged in maintaining the SUNRISE edge in manufacturing the best quality products through top-notch research that focuses on adopting indigenous innovations-driven processes."
-        ],
-        "image": "/about-images/brands.png"
-      },
-      {
-        "title": "Our Product Basket",
-        "content": [
-          "The wide range of products include Blended spices like Chana Masala, Pav Bhaji Masala, Tadka Masala, Sambar Masala, Meat Masala, Biryani Pulav Masala, Paneer Butter Masala, Shahi Garam Masala, Generic spices like Turmeric Powder, Chilli Powder, Coriander Powder, Cumin Powder, Mustard Powder, Hing, Mewarams Papad and many more."
-        ],
-        "image": "/about-images/masala.png"
-      },
-      {
-        "title": "Our Promise",
-        "content": [
-          "For us, Quality is God. And God, they say, is in the details.",
-          "It is this no-compromise attitude towards quality that gives us the confidence to promise you the best and bring you the purest."
-        ],
-        "image": "/about-images/masala2.png"
-      }
-    ]
-  }
-  
+  "sections": [
+    {
+      "title": "Our Journey",
+      "content": [
+        "From humble beginnings to a trusted household name, Milmapure has grown through dedication and passion. Our commitment to quality has garnered a loyal customer base across the country.",
+        "Starting as a small venture, Milmapure has evolved into a brand with modern production facilities, state-of-the-art machinery, and innovative research and development. Our journey is one of tradition and excellence."
+      ],
+      "image": "/about-images/about.png"
+    },
+    {
+      "title": "Research and Innovation",
+      "content": [
+        "At Milmapure, we continuously strive for innovation and quality. Our Research and Development team is dedicated to creating superior products through cutting-edge research and adopting innovative, indigenous processes."
+      ],
+      "image": "/about-images/brands.png"
+    },
+    {
+      "title": "Our Product Range",
+      "content": [
+        "Milmapure offers a diverse range of products including Blended spices like Chana Masala, Pav Bhaji Masala, Tadka Masala, Sambar Masala, Meat Masala, Biryani Pulav Masala, Paneer Butter Masala, Shahi Garam Masala, and pure spices such as Turmeric Powder, Chilli Powder, Coriander Powder, Cumin Powder, Mustard Powder, Hing, and more."
+      ],
+      "image": "/about-images/masala.png"
+    },
+    {
+      "title": "Our Commitment",
+      "content": [
+        "Quality is paramount at Milmapure. We believe in the mantra that true excellence lies in the details.",
+        "Our uncompromising approach to quality ensures that we deliver the best and purest spices to our customers."
+      ],
+      "image": "/about-images/masala2.png"
+    }
+  ]
+}

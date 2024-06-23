@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import React from 'react';
 import Slider from 'react-slick';
@@ -7,19 +8,25 @@ import 'slick-carousel/slick/slick-theme.css';
 const slides = [
   {
     id: 1,
-    image: '/banner-images/banneru1.png',
+    image: '/banner-images/hero1.jpg',
     title: 'Slide 1 Title',
     description: 'Slide 1 Description',
   },
   {
     id: 2,
-    image: '/banner-images/banner2.png',
+    image: '/banner-images/hero2.jpg',
     title: 'Slide 2 Title',
     description: 'Slide 2 Description',
   },
   {
     id: 3,
-    image: '/banner-images/banner3.png',
+    image: '/banner-images/hero4.jpg',
+    title: 'Slide 3 Title',
+    description: 'Slide 3 Description',
+  },
+  {
+    id: 4,
+    image: '/banner-images/hero6.jpg',
     title: 'Slide 3 Title',
     description: 'Slide 3 Description',
   },
@@ -54,10 +61,10 @@ const Banner = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: true,
+    arrows: false,
     pauseOnHover: true,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
+    // prevArrow: <CustomPrevArrow />,
+    // nextArrow: <CustomNextArrow />,
   };
 
   return (
@@ -66,21 +73,20 @@ const Banner = () => {
         {slides.map((slide) => (
           <div key={slide.id} className="flex items-center justify-center">
             <div
-              className="w-full flex flex-col justify-center items-center"
+              className="flex flex-col items-center justify-center w-full"
               style={{
                 backgroundImage: `url(${slide.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-              }}
-            >
-              <div className="w-full flex flex-col justify-center items-center text-white">
+              }} >
+              <div className="flex flex-col items-center justify-center w-full text-white">
                 <img
                   src={slide.image}
                   alt={slide.title}
-                  className="w-full h-auto object-cover"
+                  className="object-cover w-full h-auto"
                 />
-                {/* <div className="absolute top-0 left-50 bg-opacity-50 w-full p-4 text-center">
-                  <h2 className="text-2xl mb-2">{slide.title}</h2>
+                {/* <div className="absolute top-0 w-full p-4 text-center bg-opacity-50 left-50">
+                  <h2 className="mb-2 text-2xl">{slide.title}</h2>
                   <p className="text-lg">{slide.description}</p>
                 </div> */}
               </div>
